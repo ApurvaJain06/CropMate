@@ -4,10 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Crop Calendar Web App</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   
+  <nav class="navbar">
+    <div class="container">
+      <h1 class="logo">Crop Calendar</h1>
+      <ul class="nav-links">
+        <li><a href="#features">Fertilizer</a></li>
+        <li><a href="#calendar">buy seeds & Plants</a></li>
+        <li><a href="contact_index.html">Contact</a></li>
+        <li><a href="#weather & location">weather & location</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <header class="hero">
     <div class="hero-content">
       <h1>Plan Your Crops Smartly</h1>
@@ -27,17 +39,34 @@
         <h3>Interactive Timeline</h3>
         <p>Visualize planting, growing, and harvesting periods for every crop.</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card1">
         <img src="location-icon.svg" alt="Region Icon" />
         <h3>Region-Based Insights</h3>
         <p>Filter crop calendars by your specific region or climate zone.</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card2">
         <img src="crop-icon.svg" alt="Crop Icon" />
         <h3>Crop Filters</h3>
         <p>Select your crops and get detailed calendars tailored to them.</p>
       </div>
     </div>
   </section>
+
+  <section class="buy-seeds" id="buy-seeds">
+    <div class="container">
+      <h2>Buy Seeds & Plants</h2>
+      <p>Find the best quality seeds and healthy plants to ensure a successful farming season. Explore a wide variety suited for your region.</p>
+      <a href="buy_seeds.html" class="btn">Shop Seeds & Plants</a>
+    </div>
+  </section>
+
+  <section class="weather-location" id="weather-location">
+    <div class="container">
+      <h2>Weather & Location</h2>
+      <p>Discover the optimal weather conditions and locations ideal for sowing your seeds. Make smarter decisions based on real-time data.</p>
+      <a href="weather_location.html" class="btn">Check Weather & Locations</a>
+    </div>
+  </section>
+
 </body>
 </html>
