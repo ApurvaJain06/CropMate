@@ -17,7 +17,17 @@
     color: rgb(0, 0, 0);
     padding: 100px 20px;
     text-align: center;
-
+<<<<<<< HEAD
+}
+h1 {
+    color: red;
+}
+h2{
+    text-decoration: dashed;
+}
+h3{
+    align-items: baseline;
+}
 =======
   }
   
@@ -234,4 +244,3 @@
     margin: 0 auto;
     padding: 0 2rem;
   }
->>>>>>> 1ca8207e88c09db27c58c1ed6b44a7ee6ffbce85
