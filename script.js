@@ -1,27 +1,24 @@
 const products = [
     {
       id: 1,
-      name: "Urea Fertilizer",
+      name: "Potato Seeds",
       price: 450,
-      image: "https://via.placeholder.com/250x150?text=Urea+Fertilizer"
+      
     },
     {
       id: 2,
-      name: "DAP Fertilizer",
+      name: "Onion Seeds",
       price: 1200,
-      image: "https://via.placeholder.com/250x150?text=DAP+Fertilizer"
     },
     {
       id: 3,
       name: "Organic Compost",
       price: 300,
-      image: "https://via.placeholder.com/250x150?text=Organic+Compost"
     },
     {
       id: 4,
-      name: "Potash Fertilizer",
+      name: "tomato Seeds",
       price: 800,
-      image: "https://via.placeholder.com/250x150?text=Potash+Fertilizer"
     }
   ];
   
@@ -75,6 +72,5 @@ const products = [
     updateCart();
   }
   
-  // Load products on page load
   window.onload = loadProducts;
   

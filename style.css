@@ -20,7 +20,7 @@
 
 }
 h1 {
-    color: red;
+    color: rgb(0, 0, 0);
 }
 h2{
     text-decoration: dashed;
@@ -81,7 +81,7 @@ h3{
     border-radius: 15px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-    background-image: url(https://images.squarespace-cdn.com/content/v1/5f91c483e0fa117e2a4758f3/54e9af4d-2173-4449-ab42-f2e5306b102d/Sask+Crops.png);
+    background-image: url();
     background-size: cover;
   }
   .feature-card1 {
@@ -90,7 +90,7 @@ h3{
     border-radius: 15px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-    background-image: url(https://cdn.britannica.com/17/196817-159-9E487F15/vegetables.jpg);
+    background-image: url();
     background-size: cover;
   }
   .feature-card2 {
@@ -99,7 +99,7 @@ h3{
     border-radius: 15px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-    background-image: url(https://cdn.britannica.com/17/196817-159-9E487F15/vegetables.jpg);
+    background-image: url();
     background-size: cover;
   }
   
