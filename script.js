@@ -1,13 +1,13 @@
 const products = [
     {
       id: 1,
-      name: "Urea Fertilizer",
+      name: "Potato Seeds",
       price: 450,
       
     },
     {
       id: 2,
-      name: "DAP Fertilizer",
+      name: "Onion Seeds",
       price: 1200,
     },
     {
@@ -17,7 +17,7 @@ const products = [
     },
     {
       id: 4,
-      name: "Potash Fertilizer",
+      name: "tomato Seeds",
       price: 800,
     }
   ];
