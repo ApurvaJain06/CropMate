@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CropMate - Login</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0fdf4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .login-header h1 {
+      font-size: 2rem;
+      color: #15803d;
+      margin-bottom: 0.25rem;
+    }
+
+    .login-header p {
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .form-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-options a {
+      color: #16a34a;
+      text-decoration: none;
+    }
+
+    .form-options a:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #16a34a;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #15803d;
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .signup-link a {
+      color: #15803d;
+      text-decoration: none;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-header">
+      <h1>🌿 CropMate</h1>
+      <p>Your Crop Calendar Companion</p>
+    </div>
+    
+    <!-- Redirects to dashboard.html on submit -->
+    <form action="index.html" method="GET">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <div class="form-options">
+        <label>
+          <input type="checkbox" name="remember" />
+          Remember me
+        </label>
+        <a href="#">Forgot password?</a>
+      </div>
+      <button type="submit">Login</button>
+      <div class="signup-link">
+        Don't have an account? <a href="/register">Sign up</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
