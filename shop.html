@@ -2,30 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fertilizers Store - Crop Calendar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="shopping.css">
-</head>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"> </head>
 <body>
-  <header>
-    <h1>🌱 Fertilizers Store</h1>
-    <p>Buy the best fertilizers for your crops!</p>
+
+  <nav class="breadcrumb-nav">
+    <div class="container">
+      <a href="index.html"><i class="fas fa-home"></i> CropMate Home</a> &gt; Plant & Seeds Store
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1><i class="fas fa-leaf"></i> Plants & Seeds Store</h1>
+      <p>Nourish your crops with our premium quality Plant & Seeds Store!</p>
+    </div>
   </header>
 
-  <main>
-    <section class="products" id="products">
-    
-    </section>
+  <div class="main-content-wrapper container">
+    <main class="products-area">
+      <h2>Our Products</h2>
+      <section class="products" id="productsGrid">
+        <div class="product-card">
+          <img src="https://gardenerspath.com/wp-content/uploads/2022/03/Best-Marigold-Varieties-Feature.jpg" alt="Organic Growth Booster"> <h3>Marigold (Plant)</h3>
+          <p class="product-description">A vibrant, easy-to-grow flower that helps deter pests in vegetable gardens.
+          </p>
+          <p class="product-price">₹450</p>
+          <button class="btn btn-primary add-to-cart-btn" data-name="Organic Growth Booster" data-price="450">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
 
-    <section class="cart">
-      <h2>🛒 Cart</h2>
-      <ul id="cartItems"></ul>
-      <p><strong>Total:</strong> ₹<span id="totalPrice">0</span></p>
-      <button onclick="checkout()">Checkout</button>
-    </section>
-  </main>
+        <div class="product-card">
+          <img src="https://images.ctfassets.net/mrbo2ykgx5lt/39279/9faf74b05b4fc3f10d468f1b0dcd3f91/frontiers-in-sustainalble-food-systems-tomato-fruits-send-electrical-warnings-to-the-rest-of-the-plant-when-attacked-by-inse.jpg" alt="All-Purpose Plant Food"> <h3>Tomato Plant (Sapling)</h3>
+          <p class="product-description">Young, ready-to-plant sapling promising juicy, home-grown tomatoes.</p>
+          <p class="product-price">₹300</p>
+          <button class="btn btn-primary add-to-cart-btn" data-name="All-Purpose Plant Food" data-price="300">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+
+        <div class="product-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv-NApccOqyosFnQFT3PYJSuijPmk03jbZiw&s" alt="Bloom Enhancer Special"> <h3>Basil Plant (Herb)</h3>
+          <p class="product-description">A fragrant herb perfect for kitchen gardens, adding fresh flavor to dishes.</p>
+          <p class="product-price">₹520</p>
+          <button class="btn btn-primary add-to-cart-btn" data-name="Bloom Enhancer Special" data-price="520">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+         <div class="product-card">
+          <img src="https://m.media-amazon.com/images/I/61XZo2j3AkL.jpg" alt="Soil Conditioner Pro"> <h3>Carrot Seeds</h3>
+          <p class="product-description">Grow your own crisp, sweet carrots straight from the earth with these quality seeds.
+          </p>
+          <p class="product-price">₹380</p>
+          <button class="btn btn-primary add-to-cart-btn" data-name="Soil Conditioner Pro" data-price="380">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+        <div class="product-card">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiC3PXqcEBl-mO2vnFF-My2ZftktqtrMtzGfDido_hwUjAFtw8pIyTHDLCsv6FZ4zKMa8k6wRe4bhcWKa8mcYt279Go8SeGrDFWqtNza1sUUxyanQ8epQgmFaB7rcRUwN9kp2LApcgJ_aI/s1600/chilliseeds.jpg" alt="Bloom Enhancer Special"> <h3>Chilli Pepper Seeds</h3>
+          <p class="product-description">Spice up your meals by growing a variety of chilli peppers from these potent seeds.</p>
+          <p class="product-price">₹600</p>
+          <button class="btn btn-primary add-to-cart-btn" data-name="Bloom Enhancer Special" data-price="520">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-area card">
+      <h2><i class="fas fa-shopping-cart"></i> Your Cart</h2>
+      <ul id="cartItems">
+        <li class="cart-empty-msg">Your cart is currently empty.</li>
+      </ul>
+      <div class="cart-summary">
+        <p><strong>Total:</strong> ₹<span id="totalPrice">0.00</span></p>
+        <button class="btn btn-secondary checkout-btn" onclick="checkout()">
+            <i class="fas fa-credit-card"></i> Proceed to Checkout
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="currentYear"></span> Crop Calendar. All Rights Reserved.</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
