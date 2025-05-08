@@ -2,67 +2,187 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Location & Weather - Crop Calendar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="l&wstyles.css">
-</head>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"> </head>
 <body>
-  <header>
-    <h1>🌾 Location & Weather</h1>
-    <p>Set your farm location and check real-time weather!</p>
+
+  <nav class="breadcrumb-nav">
+    <div class="container">
+      <a href="index.html"><i class="fas fa-home"></i> Crop Calendar Home</a> &gt; Location & Weather
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1><i class="fas fa-map-marker-alt"></i> Location & <i class="fas fa-cloud-sun"></i> Weather</h1>
+      <p>Pinpoint your farm's location and get up-to-date weather insights.</p>
+    </div>
   </header>
 
-  <section class="location">
-    <h2>📍 Set Your Location</h2>
-    <input type="text" id="locationInput" placeholder="Enter your location">
-    <button onclick="detectLocation()">Use Current Location</button>
-  </section>
+  <main class="container">
+    <div class="location-weather-grid">
+      <section class="location-input card">
+        <h2>📍 Set Your Location</h2>
+        <div class="input-group">
+          <input type="text" id="locationInput" placeholder="Enter city, zip code, or address">
+          <button class="btn btn-primary" onclick="setManualLocation()">Set Manually</button>
+        </div>
+        <button class="btn btn-secondary" onclick="useCurrentLocation()"><i class="fas fa-location-arrow"></i> Use Current Location</button>
+      </section>
 
+      <section class="current-weather-display card" id="currentWeather">
+        <h2>☀️ Current Conditions</h2>
+        <div class="weather-data-placeholder" id="currentWeatherContent">
+            <p>Set a location to view current weather. (This is a demo; weather data is static).</p>
+            <div class="weather-icon-large"><i class="fas fa-sun yellow-icon"></i></div>
+            <p class="temperature">28°C</p>
+            <p class="condition">Clear Sky (Sample Data)</p>
+            <p class="details">Humidity: 60% | Wind: 5 km/h (Sample Data)</p>
+        </div>
+      </section>
+    </div>
 
+    <section class="forecast card">
+      <h2><i class="fas fa-calendar-alt"></i> 7-Day Weather Forecast (Sample Data)</h2>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Weather</th>
+              <th>Temp (°C)</th>
+              <th>Rain (mm)</th>
+              <th>Humidity (%)</th>
+              <th>Advice</th>
+            </tr>
+          </thead>
+          <tbody id="forecastBody">
+            <tr>
+              <td>Monday</td>
+              <td><i class="fas fa-sun yellow-icon"></i> Sunny</td>
+              <td>30 / 18</td>
+              <td>0</td>
+              <td>55</td>
+              <td>Excellent for sowing & field prep.</td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td><i class="fas fa-cloud-showers-heavy blue-icon"></i> Showers</td>
+              <td>27 / 19</td>
+              <td>5</td>
+              <td>75</td>
+              <td>Hold off on spraying. Check soil moisture.</td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td><i class="fas fa-cloud-sun grey-icon"></i> Partly Cloudy</td>
+              <td>31 / 20</td>
+              <td>1</td>
+              <td>60</td>
+              <td>Good for most farm activities.</td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td><i class="fas fa-wind grey-icon"></i> Windy</td>
+              <td>29 / 17</td>
+              <td>0</td>
+              <td>50</td>
+              <td>Secure young plants. Good for drying.</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td><i class="fas fa-cloud yellow-icon"></i> Cloudy</td>
+                <td>26 / 18</td>
+                <td>2</td>
+                <td>65</td>
+                <td>Monitor for pests after rain.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-  <section class="forecast">
-    <h2>📆 Weather Forecast (Next 7 Days)</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Day</th>
-          <th>Weather</th>
-          <th>Temp (°C)</th>
-          <th>Rain Chance</th>
-          <th>Advice</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Monday</td>
-          <td>☀️ Sunny</td>
-          <td>30/18</td>
-          <td>5%</td>
-          <td>Good for sowing</td>
-        </tr>
-        <tr>
-          <td>Tuesday</td>
-          <td>🌦️ Showers</td>
-          <td>27/19</td>
-          <td>70%</td>
-          <td>Delay spraying</td>
-        </tr>
-        <tr>
-          <td>Wednesday</td>
-          <td>☀️ Sunny</td>
-          <td>31/20</td>
-          <td>10%</td>
-          <td>Ideal for field work</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+    <section class="tip card">
+      <h2><i class="fas fa-lightbulb"></i> Farming Tip of the Day</h2>
+      <p id="farmingTip">Check soil temperature before planting sensitive crops. Optimal temperatures can significantly boost germination rates!</p>
+      <button class="btn btn-primary" id="newTipBtn" style="margin-top: 15px; background-color: #007bff; font-size: 0.9rem; padding: 10px 20px;">Get New Tip</button>
+    </section>
+  </main>
 
-  <section class="tip">
-    <h2>🌾 Farming Tip of the Day</h2>
-    <p>Today is a good day to sow short-duration crops like moong and urad due to dry conditions!</p>
-  </section>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="currentYear"></span> Crop Calendar. All Rights Reserved.</p>
+    </div>
+  </footer>
+
   <script>
+    // 1. Update Copyright Year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // 2. Simulate Location Setting Actions
+    function setManualLocation() {
+      const locationInput = document.getElementById('locationInput');
+      const locationValue = locationInput.value.trim();
+      const currentWeatherContent = document.getElementById('currentWeatherContent');
+
+      if (locationValue) {
+        alert(`Location set to: ${locationValue}.\n\nIn a full application, real weather data for ${locationValue} would be fetched and displayed.`);
+        // Optionally, update the placeholder text to reflect the "set" location
+        currentWeatherContent.innerHTML = `
+            <p>Showing sample weather for: <strong>${locationValue}</strong>. (This is a demo; weather data is static).</p>
+            <div class="weather-icon-large"><i class="fas fa-cloud-sun grey-icon"></i></div>
+            <p class="temperature">25°C</p>
+            <p class="condition">Mixed Cloud and Sun (Sample Data)</p>
+            <p class="details">Humidity: 62% | Wind: 8 km/h (Sample Data)</p>
+        `;
+        locationInput.value = ''; // Clear input after "setting"
+      } else {
+        alert("Please enter a location (e.g., city or zip code).");
+      }
+    }
+
+    function useCurrentLocation() {
+      alert("Attempting to use current location...\n\nIn a full application, the browser's Geolocation API would be used to get your coordinates, and then weather data would be fetched.");
+      // For demonstration, simulate finding a location
+      const currentWeatherContent = document.getElementById('currentWeatherContent');
+      currentWeatherContent.innerHTML = `
+            <p>Showing sample weather for: <strong>Your Detected Location</strong>. (This is a demo; weather data is static).</p>
+            <div class="weather-icon-large"><i class="fas fa-map-pin red-icon"></i></div>
+            <p class="temperature">27°C</p>
+            <p class="condition">Sunny Intervals (Sample Data)</p>
+            <p class="details">Humidity: 58% | Wind: 6 km/h (Sample Data)</p>
+        `;
+    }
+
+    // 3. Cycle Through Farming Tips
+    const farmingTips = [
+      "Rotate your crops each season to maintain soil health and prevent pest buildup.",
+      "Test your soil's pH levels regularly to ensure optimal nutrient absorption for your crops.",
+      "Conserve water by using drip irrigation or soaker hoses, especially during dry spells.",
+      "Mulching around plants helps retain moisture, suppress weeds, and regulate soil temperature.",
+      "Attract beneficial insects like ladybugs and lacewings to your garden for natural pest control.",
+      "Start seeds indoors for a head start on the growing season, especially for warm-weather crops.",
+      "Proper spacing between plants is crucial for air circulation and reducing disease risk.",
+      "Harvest rainwater using barrels for a sustainable source of irrigation.",
+      "Composting kitchen scraps and yard waste creates nutrient-rich fertilizer for free!",
+      "Keep records of planting dates, harvest yields, and pest problems to improve year after year."
+    ];
+    let currentTipIndex = 0;
+    const tipElement = document.getElementById('farmingTip');
+    const newTipBtn = document.getElementById('newTipBtn');
+
+    if (newTipBtn && tipElement) {
+      newTipBtn.addEventListener('click', function() {
+        currentTipIndex = (currentTipIndex + 1) % farmingTips.length;
+        tipElement.textContent = farmingTips[currentTipIndex];
+      });
+    }
 
   </script>
 </body>

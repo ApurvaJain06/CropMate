@@ -4,19 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Crop Calendar Web App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="style.css"/>
-</head>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"> </head>
 <body>
-  
+
   <nav class="navbar">
     <div class="container">
-      <h1 class="logo">Crop Calendar</h1>
+      <h1 class="logo">CropMate</h1>
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
       <ul class="nav-links">
         <li><a href="fertilizer.html">Fertilizer Buying Site</a></li>
-        <li><a href="shop.html">buy seeds & Plants</a></li>
+        <li><a href="shop.html">Buy Seeds & Plants</a></li>
         <li><a href="contact_index.html">Contact</a></li>
-        <li><a href="l&windex.html">weather & location</a></li>
-      </ul>
+        <li><a href="l&windex.html">Weather & Location</a></li> </ul>
     </div>
   </nav>
 
@@ -26,44 +32,86 @@
       <p>
         A region-specific visual calendar to help you know the best times to plant, grow, and harvest.
       </p>
-      <a href="#features" class="btn">Explore</a>
+      <a href="#features" class="btn btn-primary">Explore <i class="fas fa-arrow-down"></i></a>
     </div>
   </header>
 
-  
-  <section class="features" id="features">
-    <h2>Key Features</h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <h3>Interactive Timeline</h3>
-        <p>Visualize planting, growing, and harvesting periods for every crop.</p>
+  <main>
+    <section class="features" id="features">
+      <div class="container">
+        <h2>Key Features</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-calendar-alt fa-2x"></i> </div>
+            <h3>Interactive Timeline</h3>
+            <p>Visualize planting, growing, and harvesting periods for every crop.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-map-marked-alt fa-2x"></i> </div>
+            <h3>Region-Based Insights</h3>
+            <p>Filter crop calendars by your specific region or climate zone.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-filter fa-2x"></i> </div>
+            <h3>Crop Filters</h3>
+            <p>Select your crops and get detailed calendars tailored to them.</p>
+          </div>
+        </div>
       </div>
-      <div class="feature-card1">
-        <h3>Region-Based Insights</h3>
-        <p>Filter crop calendars by your specific region or climate zone.</p>
-      </div>
-      <div class="feature-card2">
-        <h3>Crop Filters</h3>
-        <p>Select your crops and get detailed calendars tailored to them.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="buy-seeds" id="buy-seeds">
+    <section class="buy-seeds" id="buy-seeds">
+      <div class="container">
+        <h2>Buy Seeds & Plants</h2>
+        <p>Find the best quality seeds and healthy plants to ensure a successful farming season. Explore a wide variety suited for your region.</p>
+        <a href="shop.html" class="btn btn-secondary">Shop Seeds & Plants <i class="fas fa-shopping-cart"></i></a>
+      </div>
+    </section>
+
+    <section class="weather-location" id="weather-location">
+      <div class="container">
+        <h2>Weather & Location</h2>
+        <p>Discover the optimal weather conditions and locations ideal for sowing your seeds. Make smarter decisions based on real-time data.</p>
+        <a href="weather_location.html" class="btn btn-secondary">Check Weather & Locations <i class="fas fa-cloud-sun-rain"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
     <div class="container">
-      <h2>Buy Seeds & Plants</h2>
-      <p>Find the best quality seeds and healthy plants to ensure a successful farming season. Explore a wide variety suited for your region.</p>
-      <a href="shop.html" class="btn">Shop Seeds & Plants</a>
+      <div class="footer-content">
+        <p>&copy; <span id="currentYear"></span> Crop Calendar. All Rights Reserved.</p>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="contact_index.html">Contact Us</a></li>
+        </ul>
+        <div class="social-media-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
     </div>
-  </section>
+  </footer>
 
-  <section class="weather-location" id="weather-location">
-    <div class="container">
-      <h2>Weather & Location</h2>
-      <p>Discover the optimal weather conditions and locations ideal for sowing your seeds. Make smarter decisions based on real-time data.</p>
-      <a href="weather_location.html" class="btn">Check Weather & Locations</a>
-    </div>
-  </section>
+  <script>
+    // JavaScript for dynamic year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
 
+    // Basic Nav Toggle for mobile (optional, needs more styling for active state)
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        navToggle.classList.toggle('active'); // For styling the hamburger itself
+      });
+    }
+  </script>
 </body>
 </html>
